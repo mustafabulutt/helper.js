@@ -18,24 +18,40 @@
 
 
 <script>
-dataGetir('GET', 'todos/1', null, function(j) {
+dataGetir('GET', 'todos/1', null, function(j) {      // helper js dosyasındaki data getir fonksiyonunun kullanımı bu şekilde
             console.dir(j);
 
+ });
+ 
+ swalBilgi("onay başarılı "); // helper js dosyasındaki Swal bilgi fonksiyonunun kullanımı bu şekilde
+
+ swalBasariliHataInfo("onaylandı",error , "İşlem hatası"); // helper js dosyasındaki swalBasariliHataInfo fonksiyonunun kullanımı bu şekilde
+ 
+ bolmeIslemi( 10 , 2 , function(j){
+console.log(j);                                           // helper js dosyasındaki bolmeIslemi fonksiyonunun kullanımı bu şekilde
+ });
+
+ carpmaIslemi( 10 , 2 , function(j){
+console.log(j);                                           // helper js dosyasındaki carpmaIslemi fonksiyonunun kullanımı bu şekilde
  });
 
 
 
- bolmeIslemi(100, 4, function(j) {
-            console.dir(j);  
-  });
-
-
+   //helper js dosyasındaki foreachIleDon fonksiyonu aşşağıdaki gibi çalışıyor dönülecek veriler satıra ekleniyor ve fonksiyona verilerin yerleştirilecegi id  ve satır gönderiliyor
 
   var satir = '<tr>'+'<td>'+'<div class="name">'+".full_name"+'</div>'+'<div class="desc">'+"dedicated.expiry"+'</div>'+'</td>'+'<td><div class="status active">Aktif</div></td>'+'<td>'+"dasdasdasd"+'</td>'+'</tr>';
   
   foreachIleDon('tablo',satir);
 
 
+
+  
+  getParam("blog" ,function(j) {     // helper js dosyasındaki get param bu şekilde kullanılıyor sayfada get ile gönderilen parametreyi almak için parametre adı fonksiyona gönderiliyor sonuç olarak değer dönüyor
+            console.log(j);  
+  });
+
+  setItem("kullanıcıToken","deneme") //helper js dosyasındaki set item local storage veriyi kaydediyor kullanımı key value şeklinde
+  getItem("kullanıcıToken") //helper js dosyasındaki get item local storage veriyi getiriyor kullanımı key şeklinde
 
 
 </script>

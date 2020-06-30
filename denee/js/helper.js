@@ -1,3 +1,7 @@
+
+// fonksiyonların eksiksiz bir şekilde kullanılabilmesi için   /     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> /      <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> / 
+//script taglarının eklenmesi gerekir
+
 var apiGenelUrl = 'https://jsonplaceholder.typicode.com/'; //burada istek atacagımız api urlsi yolunu belirtiyorum.
 
 
@@ -55,9 +59,39 @@ $.ajax(req).done(function (response) {
         document.getElementById(tabloId).innerHTML +=satir;
     }
 
+    
+    this.getParam= function(alinacakParametre , callback){   // bu fonksiyon ile sayfada url ile gönderilen parametre yakalanıp callback ile geri gönderiliyor.
+        
+
+  
+  var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+    }
+};
+      var gelendeger = getUrlParameter(alinacakParametre);
+       callback(gelendeger);
+
+    }
+    
 
     
- //parametre alma için fonksiyon yazılacak
+    this.setItem = function(key, value) {           // bu fonksiyon ile localStorage veri ekleyebiliyoruz
+        localStorage.setItem(key, value);
+    };
+    this.getItem = function(key) {                 // bu fonksiyon ile localStorage eklenmiş veriyi okuyoruz
+        return localStorage.getItem(key);
+    };
+
 
 
 
