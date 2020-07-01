@@ -1,5 +1,8 @@
 
-// fonksiyonların eksiksiz bir şekilde kullanılabilmesi için   /     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> /      <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> / 
+
+// <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>  
+// <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> 
+// fonksiyonların eksiksiz bir şekilde kullanılabilmesi içinyukarıdaki
 //script taglarının eklenmesi gerekir
 
 var apiGenelUrl = 'https://jsonplaceholder.typicode.com/'; //burada istek atacagımız api urlsi yolunu belirtiyorum.
@@ -9,7 +12,7 @@ var apiGenelUrl = 'https://jsonplaceholder.typicode.com/'; //burada istek atacag
 
     this.dataGetir = function(method, page, _data, callBack) {     // Burada Get ve Post isteklerini atacagımız alanı oluşturup hazırlıyoruz ve gelen methoda göre isteği gerçekleştiriyoruz
 
-      console.log(method, page ,_data );  // konsolda attıgımız isteğe dair parametreleri görmek için yazdırıyoruz
+      // console.log(method, page ,_data );  // konsolda attıgımız isteğe dair parametreleri görmek için yazdırıyoruz hata oldugunu isteğe ulaşamadıgınızı düşünürseniz aktif hale getirebilirsiniz
 
         _header = {
             "Content-Type": "application/json",
